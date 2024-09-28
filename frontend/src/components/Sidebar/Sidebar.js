@@ -24,7 +24,7 @@ export default function Sidebar() {
             className="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
             to="/"
           >
-            Notus React
+          Track Mart
           </Link>
           {/* User */}
           <ul className="md:hidden items-center flex flex-wrap list-none">
@@ -119,7 +119,7 @@ export default function Sidebar() {
                   <i
                     className={
                       "fas fa-tools mr-2 text-sm " +
-                      (window.location.href.indexOf("/admin/settings") !== -1
+                      (window.location.href.indexOf("/settings") !== -1
                         ? "opacity-75"
                         : "text-blueGray-300")
                     }
@@ -202,7 +202,62 @@ export default function Sidebar() {
                 </Link>
               </li>
             </ul>
+            <hr className="my-4 md:min-w-full" />
+            {/* Heading */}
+            <h6 className="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
+             Users
+            </h6>
+            {/* Navigation */}
 
+            <ul className="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
+              <li className="items-center">
+                <Link
+                  className="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
+                  to="/users"
+                >
+                  <i className="fas fa-fingerprint text-blueGray-400 mr-2 text-sm"></i>{" "}
+                  All Customers
+                </Link>
+              </li>
+
+              <li className="items-center">
+                <Link
+                  className="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
+                  to="/suppliers"
+                >
+                  <i className="fas fa-clipboard-list text-blueGray-300 mr-2 text-sm"></i>{" "}
+                  Suppliers
+                </Link>
+              </li>
+            </ul>
+            <hr className="my-4 md:min-w-full" />
+            {/* Heading */}
+            <h6 className="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
+              Proucts
+            </h6>
+            {/* Navigation */}
+
+            <ul className="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
+              <li className="items-center">
+                <Link
+                  className="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
+                  to="/allproducts"
+                >
+                  <i className="fas fa-fingerprint text-blueGray-400 mr-2 text-sm"></i>{" "}
+                  All Products
+                </Link>
+              </li>
+
+              <li className="items-center">
+                <Link
+                  className="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
+                  to="/outofstock"
+                >
+                  <i className="fas fa-clipboard-list text-blueGray-300 mr-2 text-sm"></i>{" "}
+                  Out Of Stock
+                </Link>
+              </li>
+            </ul>
             {/* Divider */}
             <hr className="my-4 md:min-w-full" />
             {/* Heading */}
