@@ -1,12 +1,24 @@
-import {BsArrowLeftShort,BsSearch} from 'react-icons/bs'
+import {BsArrowLeftShort,BsSearch,BsChevronDown} from 'react-icons/bs';
+import { FaUsersViewfinder } from "react-icons/fa6";
 import {useState} from 'react'
-import {AiFillEnvironment} from 'react-icons/ai'
+import {AiFillEnvironment} from 'react-icons/ai';
+import {RiDashboardFill} from 'react-icons/ri'
 const App = () => {
   const [open,setOpen]=useState(true)
+  const [submenuopen,setsubmenuOpen]=useState(false)
 const Menus=[
-  {title:"Dashboard"},
-  {title:"Users"},
-  {title:"Products"},
+  {title:"Dashboard",icon:<RiDashboardFill/>},
+  {title:"Users",icon:<FaUsersViewfinder/>},
+  {title:"Products",spacing:true},
+  {
+    title:"Orders",
+    submenu:true,
+    submenuItems:[
+      {title:"Order List"},
+      {title:"Order Details"},
+      {title:"Order Status"},
+    ],
+  },
   {title:"Account"},
   {title:"Suppliers"},
   {title:"Reports"},
@@ -28,7 +40,33 @@ top-9 border border-dark-purple cursor-pointer ${!open && 'rotate-180'}`} onClic
    {
     Menus.map((menu,index)=>(
       <>
-      <li key={index} className='text-gray-300 text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-light-white rounded-md mt-2'><span>{menu.title}</span></li>
+      <li key={index} className={`text-gray-300 
+      text-sm flex items-center 
+      gap-x-4 cursor-pointer p-2
+       hover:bg-light-white rounded-md ${menu.spacing ? "mt-9":"mt-2"} `}>
+        <span className='text-2xl block float-left'>
+         {menu.icon? menu.icon :<RiDashboardFill/>}
+          </span>
+        <span className={`text-base font-medium flex-1 ${!open && "hidden"}`}>{menu.title}</span>
+        {menu.submenu && open && (
+    <BsChevronDown className={`${submenuopen && "rotate-180 duration-300" }`} onClick={()=>setsubmenuOpen(!submenuopen)}/>
+        )}
+        </li>
+        {
+          menu.submenu && submenuopen && open && (
+            <ul>
+            {menu.submenuItems.map((subMenuItem, index) => (
+              <li key={index} className='text-gray-300 
+                text-sm flex items-center 
+                gap-x-4 cursor-pointer p-2 px-5
+                hover:bg-light-white rounded-md'>
+                {subMenuItem.title}
+              </li>
+            ))}
+          </ul>
+          
+          )
+        }
       </>
     )
    )}
