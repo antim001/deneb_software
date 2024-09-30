@@ -1,11 +1,12 @@
 import { BsArrowLeftShort, BsSearch, BsChevronDown } from 'react-icons/bs';
 import { MdProductionQuantityLimits } from "react-icons/md";
+import { FaSackDollar } from "react-icons/fa6";
 import { FaUsersViewfinder } from "react-icons/fa6";
 import { useState } from 'react';
 import { AiFillEnvironment } from 'react-icons/ai';
 import { RiDashboardFill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
-
+import { VscPersonAdd } from "react-icons/vsc";
 const Sidebar = () => {
   const [open, setOpen] = useState(true);
   
@@ -28,7 +29,7 @@ const Sidebar = () => {
         { title: "Order Status", path: "/orders/status" },
       ],
     },
-    { title: "Account", path: "/account" },
+    { title: "Account", path: "/account" ,icon:<FaSackDollar/>},
     { title: "Suppliers", spacing: true, path: "/suppliers" },
     {
       title: "Inventory",
@@ -41,7 +42,8 @@ const Sidebar = () => {
         { title: "Stock Update", path: "/inventory/update" },
       ],
     },
-    { title: "Reports", path: "/reports" },
+    { title: "Reports", path: "/reports",spacing:true },
+    { title: "Employees",icon:<VscPersonAdd/> },
   ];
 
   return (
