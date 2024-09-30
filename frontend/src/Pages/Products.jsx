@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import {Link} from 'react-router-dom'
 // Sample product data; in a real application, you would fetch this from an API
 const sampleProducts = [
   { id: 1, name: 'Aspirin', price: '$10.00', stock: 100 },
@@ -18,6 +18,10 @@ const Products = () => {
   return (
     <div className='p-5'>
       <h1 className='text-2xl font-bold mb-4'>Products</h1>
+      <div className='flex justify-end mb-4'>
+       <Link to='/addproduct'> <h2 className='btn bg-purple-950 text-white font-medium'>Add Product</h2></Link>
+      </div>
+
       <table className='min-w-full bg-white rounded-lg shadow-md'>
         <thead>
           <tr className='bg-gray-200 text-gray-600 text-left text-sm uppercase tracking-wider'>
