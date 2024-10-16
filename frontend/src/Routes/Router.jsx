@@ -6,11 +6,12 @@ import Account from '../Pages/Account.jsx';
 import Dashboard from '../Pages/Dashboard.jsx'
 import AddProduct from '../components/AddProduct.jsx'
 import Suppliers from "../Pages/Suppliers.jsx";
+import ErrorElement from "../components/ErrorElement.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />, // Render the Layout component
-    errorElement:<div className="pt-32 font-bold text-5xl">404 Not Found</div>,
+    errorElement:<ErrorElement/>,
     children: [
       { path: "/", element:<Dashboard/> },
         { path: "/allusers", element: <AllUsers /> }, // AllUsers component
