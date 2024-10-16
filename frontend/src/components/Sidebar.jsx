@@ -33,6 +33,7 @@ const Sidebar = () => {
     { title: "Suppliers", spacing: true, path: "/suppliers" },
     {
       title: "Inventory",
+      path: "/inventory/overview",
       submenu: true,
       submenuOpen: inventoryOpen,
       setSubmenuOpen: setInventoryOpen, // Bind setInventoryOpen
