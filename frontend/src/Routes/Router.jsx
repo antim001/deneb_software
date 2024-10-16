@@ -10,6 +10,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />, // Render the Layout component
+    errorElement:<div className="pt-32 font-bold text-5xl">404 Not Found</div>,
     children: [
       { path: "/", element:<Dashboard/> },
         { path: "/allusers", element: <AllUsers /> }, // AllUsers component
