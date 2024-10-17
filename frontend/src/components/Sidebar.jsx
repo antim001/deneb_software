@@ -20,6 +20,7 @@ const Sidebar = () => {
     { title: "Products", spacing: true , icon: <MdProductionQuantityLimits />, path: '/allproducts' },
     {
       title: "Orders",
+      path: "/orders/list",
       submenu: true,
       submenuOpen: ordersOpen,
       setSubmenuOpen: setOrdersOpen, // Bind setOrdersOpen
@@ -44,7 +45,7 @@ const Sidebar = () => {
       ],
     },
     { title: "Reports", path: "/reports",spacing:true },
-    { title: "Employees",icon:<VscPersonAdd/> },
+    { title: "Employees",icon:<VscPersonAdd/>,path: "/employees" },
   ];
 
   return (
