@@ -78,7 +78,8 @@ const Sidebar = () => {
                 <span className='text-2xl block float-left'>
                   {menu.icon ? menu.icon : <RiDashboardFill />}
                 </span>
-                <Link to={menu.path} className={`text-base font-medium flex-1 ${!open && "hidden"}`}>
+                <Link to={menu.path} className={`text-base font-medium flex-1 ${!open && "hidden"}`}
+                onClick={() => menu.setSubmenuOpen(!menu.submenuOpen)}>
                   {menu.title}
                 </Link>
                 {menu.submenu && open && (
