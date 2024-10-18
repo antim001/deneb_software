@@ -83,6 +83,7 @@ const Sidebar = () => {
                 </Link>
                 {menu.submenu && open && (
                   <BsChevronDown
+                    
                     className={`${menu.submenuOpen ? "rotate-180 duration-300" : ""}`}
                     onClick={() => menu.setSubmenuOpen(!menu.submenuOpen)}
                   />
