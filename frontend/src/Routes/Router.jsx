@@ -13,6 +13,7 @@ import Update from "../Pages/Inventory/Update.jsx";
 import OrderStatus from "../Pages/Orders/OrderStatus.jsx";
 import OrderList from "../Pages/Orders/OrderList.jsx";
 import OrderDetails from '../Pages/Orders/OrderDetails.jsx';
+import Report from '../Pages/Report.jsx'
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,7 @@ const router = createBrowserRouter([
       { path: '/orders/list', element: <OrderList/> },
       { path: '/orders/details', element: <OrderDetails/> },
       { path: '/orders/status', element: <OrderStatus/> },
+      { path: '/reports', element: <Report/> }
     ],
   },
 ]);
